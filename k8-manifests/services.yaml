@@ -31,16 +31,16 @@ spec:
             limits:
               memory: '1000Mi'
               cpu: '500m'
-          livenessProbe:
-            failureThreshold: 3
-            initialDelaySeconds: 60
-            periodSeconds: ''
-            timeoutSeconds: 1
-            exec:
-              command:
-                - >-
-                  /bin/sh -c "touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy;
-                  sleep 600"
+          # livenessProbe:
+          #   failureThreshold: 3
+          #   initialDelaySeconds: 60
+          #   periodSeconds: ''
+          #   timeoutSeconds: 1
+          #   exec:
+          #     command:
+          #       - >-
+          #         /bin/sh -c "touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy;
+          #         sleep 600"
 
 ---
 
