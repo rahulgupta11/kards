@@ -12,6 +12,10 @@ steps:
   id: Push docker image with latest tag
   args: ['push', '${_GCR_DOCKER_IMAGE_PATH}:latest']
 
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: Connecting to GKE cluster
+  args: ['container', 'clusters', 'get-credentials', '${_KUBERNETES_CLUSTER_NAME}', '--zone', '_KUBERNETES_CLUSTER_LOCATION', '--project', '_GCP_PROJECT_ID']
+
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Creating/Updating deployement, services
   args: ['apply','-f','k8-manifests/services.yaml']
