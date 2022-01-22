@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   id: Build docker image
-  args: ['build', '--tag=${_GCR_DOCKER_IMAGE_PATH}:$SHORT_SHA', '.']
+  args: ['build', '--tag=${_GCR_DOCKER_IMAGE_PATH}:$SHORT_SHA', '--tag=${_GCR_DOCKER_IMAGE_PATH}:latest', '.']
   dir: ${_SERVICE_FOLDER_NAME}
 
 - name: 'gcr.io/cloud-builders/docker'
