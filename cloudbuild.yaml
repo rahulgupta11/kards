@@ -19,6 +19,9 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Creating/Updating deployement, services
   args: ['apply','-f','k8-manifests/services.yaml']
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=${_KUBERNETES_CLUSTER_LOCATION}'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=${_KUBERNETES_CLUSTER_NAME}'
 
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Update image of kubernetes deployment
