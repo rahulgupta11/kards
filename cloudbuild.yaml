@@ -25,7 +25,7 @@ steps:
 
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Update image of kubernetes deployment
-  args: ['set','namespace/mdev', 'image', 'deployment/${_KUBERNETES_DEPLOYMENT_NAME}', '${_KUBERNETES_CONTAINER_NAME}=${_GCR_DOCKER_IMAGE_PATH}:$SHORT_SHA']
+  args: ['set','namespace/${_KUBERNETES_NAMESPACE_NAME}', 'image', 'deployment/${_KUBERNETES_DEPLOYMENT_NAME}', '${_KUBERNETES_CONTAINER_NAME}=${_GCR_DOCKER_IMAGE_PATH}:$SHORT_SHA']
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=${_KUBERNETES_CLUSTER_LOCATION}'
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_KUBERNETES_CLUSTER_NAME}'
