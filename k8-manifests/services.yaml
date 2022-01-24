@@ -49,6 +49,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: kards
+  namespace: mdev
 spec:
   type: NodePort
   selector:
