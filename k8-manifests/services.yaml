@@ -52,6 +52,7 @@ metadata:
   namespace: mqa
 spec:
   type: NodePort
+ 
   selector:
     app: web
   ports:
