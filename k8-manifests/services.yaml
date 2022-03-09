@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: kards
-          image: 'gcr.io/my-kubernates-project-338709/kards:latest'
+          image: 'gcr.io/my-kubernates-project-338709/kards123:latest'
           ports:
             - containerPort: 80
           resources:
