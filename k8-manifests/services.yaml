@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kards
+  name: kards123
   namespace: mqa
   labels:
     app: web
@@ -21,7 +21,7 @@ spec:
         app: web
     spec:
       containers:
-        - name: kards
+        - name: kards123
           image: 'gcr.io/my-kubernates-project-338709/kards123:latest'
           ports:
             - containerPort: 80
@@ -48,7 +48,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: kards
+  name: kards123
   namespace: mqa
 spec:
   type: NodePort
