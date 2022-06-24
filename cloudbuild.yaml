@@ -38,12 +38,12 @@ steps:
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_KUBERNETES_CLUSTER_NAME}'
   
 substitutions:
-    _PROJECT_ID: nimble-chess-351208
-    _KUBERNETES_CLUSTER_LOCATION: us-central1
-    _KUBERNETES_CLUSTER_NAME: cluster-1
+    _PROJECT_ID: 	excellent-sunup-353211
+    _KUBERNETES_CLUSTER_LOCATION: asia-south1-a
+    _KUBERNETES_CLUSTER_NAME: elasticsearch
     _KUBERNETES_DEPLOYMENT_NAME: kards123
     _KUBERNETES_CONTAINER_NAME: kards123
     _KUBERNETES_NAMESPACE_NAME: mdev
-    _GCR_DOCKER_IMAGE_PATH: gcr.io/nimble-chess-351208/nginx
+    _GCR_DOCKER_IMAGE_PATH: gcr.io/excellent-sunup-353211/nginx
   
 timeout: 900s
