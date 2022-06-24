@@ -38,7 +38,7 @@ steps:
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_KUBERNETES_CLUSTER_NAME}'
   
 substitutions:
-    _PROJECT_ID: 	excellent-sunup-353211
+    _PROJECT_ID: excellent-sunup-353211
     _KUBERNETES_CLUSTER_LOCATION: asia-south1-a
     _KUBERNETES_CLUSTER_NAME: elasticsearch
     _KUBERNETES_DEPLOYMENT_NAME: kards123
