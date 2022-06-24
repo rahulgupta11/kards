@@ -20,21 +20,21 @@ steps:
   id: Creating/Updating deployement, services
   args: ['apply','-f','k8-manifests/services.yaml']
   env:
-  - 'CLOUDSDK_COMPUTE_REGION=${_KUBERNETES_CLUSTER_LOCATION}'
+  - 'CLOUDSDK_COMPUTE_ZONE=${_KUBERNETES_CLUSTER_LOCATION}'
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_KUBERNETES_CLUSTER_NAME}'
 
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Update image of kubernetes deployment
   args: ['set','--namespace', '${_KUBERNETES_NAMESPACE_NAME}', 'image', 'deployment/${_KUBERNETES_DEPLOYMENT_NAME}', '${_KUBERNETES_CONTAINER_NAME}=${_GCR_DOCKER_IMAGE_PATH}:$SHORT_SHA']
   env:
-  - 'CLOUDSDK_COMPUTE_REGION=${_KUBERNETES_CLUSTER_LOCATION}'
+  - 'CLOUDSDK_COMPUTE_ZONE=${_KUBERNETES_CLUSTER_LOCATION}'
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_KUBERNETES_CLUSTER_NAME}'
 
 - name: 'gcr.io/cloud-builders/kubectl'
   id: Check rollout status of kubernetes deployment
   args: ['rollout','--namespace', '${_KUBERNETES_NAMESPACE_NAME}', 'status', 'deployment/${_KUBERNETES_DEPLOYMENT_NAME}']
   env:
-  - 'CLOUDSDK_COMPUTE_REGION=${_KUBERNETES_CLUSTER_LOCATION}'
+  - 'CLOUDSDK_COMPUTE_ZONE=${_KUBERNETES_CLUSTER_LOCATION}'
   - 'CLOUDSDK_CONTAINER_CLUSTER=${_KUBERNETES_CLUSTER_NAME}'
   
 # substitutions:
